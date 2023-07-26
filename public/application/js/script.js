@@ -11,7 +11,11 @@ console.log("HELLO WORLD !!!");
 (async () => {
   let url = window.location.href.split("/")[2];
   const response = await fetch(
-    `https://${url}/ext/ajio_zissan_1/application/api`
+    `https://${url}/ext/jio-workshop/storefront/api`, {
+      headers: new Headers({
+        "ngrok-skip-browser-warning": "69420",
+      }),
+    }
   );
 
   const data = await response.json();

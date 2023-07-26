@@ -1,14 +1,16 @@
-const PROXY_PATH = process.env.PROXY_PATH || "ajio_zissan_1";
+const PROXY_PATH = process.env.PROXY_PATH || "jio-workshop";
 /** THE LAUNCH URL */
 const PROXY_URL =
-  process.env.PROXY_URL || "https://77df-116-50-84-117.ngrok-free.app";
+  process.env.PROXY_URL || "https://961d-14-142-183-234.ngrok-free.app";
 
 /** API KEY */
-const EXTENSION_ID = process.env.EXTENSION_ID || "64914208fb9315d31ee200da";
+// const EXTENSION_ID = "64213de520a5902cbce162a8"; // sid
+const EXTENSION_ID = "645c92cdbf0856e798354628"; // Abhishek
 
-const EXTENSION_SECRET = process.env.EXTENSION_SECRET || "L-P9hsCochBdQEZ";
+// const EXTENSION_SECRET = "xaAtO5F8mBW~x8s"; // sid
+const EXTENSION_SECRET = "F80V45~JPMsOSS1"; // Abhishek
 
-const CLUSTER_URL = process.env.CLUSTER_URL || "https://api.tiraz5.de";
+const CLUSTER_URL = "https://api.fyndx1.de";
 
 const SCRIPT_TAG = {
   tags: [

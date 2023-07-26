@@ -1,8 +1,33 @@
 let companyId = null;
 
 (async () => {
-  await addTags();
+  // await Promise.allSettled([addTags()]);
+  // await Promise.allSettled([deleteTag(), getTags()]);
+  // await deleteTag();
+  await getTags();
+  // await removeProxy();
+  // await createProxy();
+  // await deleteAllTags()
 })();
+
+async function createOrder() {
+  const response = await fetch(`/api/order`, {
+    method: "POST",
+  });
+  console.log(response);
+  return response;
+}
+
+async function deleteAllTags() {
+  const tagsData = await getTags();
+  companyId = searchParams.get("company_id");
+  const deleteTags$  = tagsData.data.tags.map(tag => {
+    fetch(`/api/tag/${tag._id}?company_id=${companyId}`, {
+      method: "DELETE",
+    });
+  });
+  return await Promise.allSettled(deleteTags$);
+};
 
 async function deleteTag() {
   const searchParams = new URLSearchParams(location.search);
@@ -10,9 +35,9 @@ async function deleteTag() {
   companyId = searchParams.get("company_id");
 
   // 6493ea9e7585b7d8a9cc6997
-  const tagId = "6493ea9e7585b7d8a9cc6997";
+  const tagId = "64a5c18c28a8bfda3decfb98";
 
-  const response = await fetch(`/tag/${tagId}?company_id=${companyId}`, {
+  const response = await fetch(`/api/tag/${tagId}?company_id=${companyId}`, {
     method: "DELETE",
   });
 
@@ -26,11 +51,11 @@ async function getTags() {
 
   companyId = searchParams.get("company_id");
 
-  const response = await fetch(`/tags?company_id=${companyId}`);
+  const response = await fetch(`/api/tags?company_id=${companyId}`);
 
   const data = await response.json();
-
   console.log(data);
+  return data;
 }
 
 async function addTags() {
@@ -38,7 +63,7 @@ async function addTags() {
 
   companyId = searchParams.get("company_id");
 
-  const response = await fetch(`/tag?company_id=${companyId}`, {
+  const response = await fetch(`/api/tag?company_id=1`, {
     method: "POST",
   });
 
@@ -52,7 +77,7 @@ async function createProxy() {
 
   companyId = searchParams.get("company_id");
 
-  const response = await fetch(`/proxy?company_id=${companyId}`, {
+  const response = await fetch(`/api/proxy?company_id=1`, {
     method: "POST",
   });
 
@@ -66,7 +91,7 @@ async function removeProxy() {
 
   companyId = searchParams.get("company_id");
 
-  const response = await fetch(`/proxy?company_id=${companyId}`, {
+  const response = await fetch(`api/proxy?company_id=${companyId}`, {
     method: "DELETE",
   });
 

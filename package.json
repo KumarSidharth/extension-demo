@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
   },
   "dependencies": {
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
-    "fdk-client-javascript": "git+https://github.com/gofynd/fdk-client-javascript.git#0.1.25",
-    "fdk-extension-javascript": "git+https://github.com/gofynd/fdk-extension-javascript.git#v0.6.0-beta.2",
+    "fdk-client-javascript": "git+https://github.com/gofynd/fdk-client-javascript.git#main",
+    "fdk-extension-javascript": "git+https://github.com/gofynd/fdk-extension-javascript.git#main",
     "ioredis": "^5.2.2"
   },
   "keywords": [],

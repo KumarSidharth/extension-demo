@@ -9,8 +9,8 @@ const storage = new RedisStorage(appRedis, "demo-ajio");
 const getFdk = () => {
   return setupFdk(
     {
-      api_key: EXTENSION_ID,
-      api_secret: EXTENSION_SECRET,
+      api_key: '64213de520a5902cbce162a8',
+      api_secret: 'xaAtO5F8mBW~x8s',
       base_url: PROXY_URL,
       callbacks: {
         auth: async (req) => {
@@ -23,7 +23,7 @@ const getFdk = () => {
       access_mode: "offline",
       cluster: CLUSTER_URL,
     },
-    true
+    false
   );
 };
 
